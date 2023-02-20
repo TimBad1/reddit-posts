@@ -1,0 +1,23 @@
+.wrap {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    display: inline-block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    background-color: #CC6633;
+    border-radius: 0px 0px 3px 0px;
+    align-self: flex-end;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    color: #FFFFFF;
+  }

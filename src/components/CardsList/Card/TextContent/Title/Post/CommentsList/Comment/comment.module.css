@@ -1,0 +1,45 @@
+.commentItem {
+    display: flex;
+    padding-top: 35px;
+}
+
+.commentItemLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding: 0 10px;
+    gap: 20px;
+}
+
+.commentItemRecomment {
+    width: 3px;
+    height: 100%;
+    justify-content: stretch;
+    background-color: var(--greyD9);
+}
+
+.commentWrap {
+    display: flex;
+    justify-content: start;
+    gap: 20px;
+}
+
+.commentFullname {
+    color: var(--orange);
+}
+
+.commentCreated {
+    color: var(--grey99);
+}
+
+.commentSubreddit {
+    background-color: var(--greyD9);
+    color: var(--black);
+    padding: 0 7px;
+}
+
+.commentBody {
+    margin: 0;
+    line-height: 1.6em;
+}

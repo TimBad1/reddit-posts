@@ -1,26 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
+import { saveToken } from './store/saveToken/actions';
+import { meRequestAsync } from './store/me/actions';
+import { useDispatch } from 'react-redux';
+import { Layout } from './components/Layout';
+import { Header } from './components/Header';
+import { Content } from './components/Content';
+import { Navigate, Route, Routes } from 'react-router-dom';
+import { NotFound } from './components/NotFound';
+import { CardsList } from './components/CardsList';
+
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [mounted, setMounted] = useState(false)
+  const dispatch = useDispatch();
+
+	useEffect(() => {
+		setMounted(true)
+	}, []);
+  
+  useEffect(() => {
+		dispatch(saveToken());
+		dispatch(meRequestAsync());      
+  }, [])
+
+	return (
+		<>
+		{mounted && (
+			<Layout>
+			<Header />
+				<Content>
+					<Routes>
+						<Route path='/auth' element={<Navigate replace to='/posts'/> } />
+						<Route path='/' element={<Navigate replace to='/posts'/> } />
+						<Route path='/posts/*' element={<CardsList />} />
+						<Route path='*' element={<NotFound /> } />
+					</Routes>
+				</Content>
+			</Layout>
+		)}
+	</>
+	)
 }
 
 export default App;

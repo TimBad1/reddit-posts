@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Menu should render (snapshot) 1`] = `
+<div
+  className="menu"
+>
+  <button
+    className="menuButton"
+    onClick={[Function]}
+  >
+    <MenuIcon />
+  </button>
+</div>
+`;
