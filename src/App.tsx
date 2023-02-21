@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import './App.css';
 import { saveToken } from './store/saveToken/actions';
 import { meRequestAsync } from './store/me/actions';
 import { useDispatch } from 'react-redux';
@@ -9,8 +8,7 @@ import { Content } from './components/Content';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { NotFound } from './components/NotFound';
 import { CardsList } from './components/CardsList';
-
-
+import './main.global.css';
 
 function App() {
 	const [mounted, setMounted] = useState(false)
@@ -22,6 +20,7 @@ function App() {
   
   useEffect(() => {
 		dispatch(saveToken());
+		
 		dispatch(meRequestAsync());      
   }, [])
 

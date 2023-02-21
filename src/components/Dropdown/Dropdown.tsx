@@ -47,9 +47,9 @@ export function Dropdown({
     : {top:0 , left:0, height: 0, width: 0}
 
       function getPositionMenu (coordinates: any) {
-    const screenWidth = screen.width;
-    const y = coordinates.top + pageYOffset + coordinates.height;
-    const x = screenWidth - (coordinates.left + pageXOffset) - (screenWidth >= 1024? coordinates.width / 2 : coordinates.width)  
+    const screenWidth = window.screen.width;
+    const y = coordinates.top + window.pageYOffset + coordinates.height;
+    const x = screenWidth - (coordinates.left + window.pageXOffset) - (screenWidth >= 1024? coordinates.width / 2 : coordinates.width)  
     return {top: y, rigth: x}
   }
 

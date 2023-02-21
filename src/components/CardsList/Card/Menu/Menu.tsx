@@ -1,8 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './menu.module.css';
+import { Text, EColors } from '../../../customs/Text';
 import ReactDOM from 'react-dom';
 import { MenuItemsList } from './MenuItemsList';
-import { Text, EColors } from '../../../customs/Text';
 
 interface IMenuProps {
   postId: string;
@@ -20,9 +20,9 @@ interface IMenuProps {
 export function Menu({ postId, author, onClose, coordinates, isDropdownOpen}: IMenuProps) {
   const [isModalOpened, setIsModalOpened] = useState(false);
   function getPositionMenu (coordinates: any) {
-    const screenWidth = screen.width;
-    const y = coordinates.top + pageYOffset + coordinates.height;
-    const x = screenWidth - (coordinates.left + pageXOffset) - (screenWidth >= 1024? coordinates.width / 2 : coordinates.width)  
+    const screenWidth = window.screen.width;
+    const y = coordinates.top + window.pageYOffset + coordinates.height;
+    const x = screenWidth - (coordinates.left + window.pageXOffset) - (screenWidth >= 1024? coordinates.width / 2 : coordinates.width)  
     
     return {top: y, rigth: x}
   }

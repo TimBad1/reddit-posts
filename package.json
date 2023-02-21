@@ -31,7 +31,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts CLIENT_ID=7hz1jdLab3Oqt003Es5BDw CLIENT_SECRET=RDaVaRG9ljub36UydSrEK1PIc1Qfxw start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

@@ -1,8 +1,8 @@
 import styles from './menuitemslist.module.css';
 import { BlockIcon, CommentIcon, SaveIcon, ShareIcon, WarningIcon } from '../../../../Icons';
+import { Text, EColors } from '../../../../customs/Text';
 import { useDispatch } from 'react-redux';
 import { repliesComment } from '../../../../../store/repliesComment/actions';
-import { Text, EColors } from '../../../../customs/Text';
 
 interface IMenuItemsListProps {
   postId: string;
